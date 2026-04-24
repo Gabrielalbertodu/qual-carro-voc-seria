@@ -1,58 +1,294 @@
+/* ===== BASE ===== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: url("img/fundo_imagem.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    min-height: 100vh;
     margin: 0;
+    color: white;
 }
 
+/* Overlay escuro */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.74);
+    z-index: -1;
+}
+
+/* ===== APP ===== */
 #app {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+    max-width: 760px;
+    width: 90%;
+    min-height: 520px;
+
+    background: rgba(8, 8, 8, 0.9);
+    border-radius: 24px;
+    padding: 28px;
+
+    border: 2px solid rgba(255, 120, 0, 0.5);
+    box-shadow:
+        0 0 30px rgba(255, 120, 0, 0.35),
+        inset 0 0 20px rgba(255, 120, 0, 0.08);
+
+    animation: aparecer 0.6s ease;
 }
 
-h1, h2, h3 {
+/* ===== TEXTOS ===== */
+h1, h2 {
+    text-align: center;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 12px rgba(255, 140, 0, 1);
+    margin: 0 0 10px;
+}
+
+p {
     text-align: center;
 }
 
+/* ===== TELA INICIAL CENTRALIZADA ===== */
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 480px;
+}
+
+#welcome p {
+    max-width: 600px;
+    margin: 10px auto 20px;
+    line-height: 1.5;
+}
+
+/* ===== BOTÕES ===== */
 button {
     display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    margin: 18px auto 0;
+    padding: 12px;
+
+    width: 100%;
+    max-width: 230px;
+
+    background: linear-gradient(135deg, #ff5e00, #ffb000);
+    color: black;
+
     border: none;
-    border-radius: 4px;
+    border-radius: 22px;
+
+    font-weight: bold;
+    letter-spacing: 1px;
     cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(255, 120, 0, 0.65);
+    transition: 0.25s;
 }
 
 button:hover {
-    background-color: #0056b3;
+    transform: scale(1.04);
+    box-shadow: 0 0 24px rgba(255, 120, 0, 0.9);
 }
 
+/* ===== QUIZ ===== */
+#quiz {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#question-title {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    color: #ff9c00;
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(255, 120, 0, 1);
+}
+
+/* ===== BARRA TURBO ===== */
+#progress-container {
+    width: 100%;
+    height: 12px;
+
+    background: rgba(35, 35, 35, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin: 10px 0 20px;
+    border: 1px solid rgba(255, 120, 0, 0.5);
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+
+    border-radius: 20px;
+    background: linear-gradient(90deg, #ff3c00, #ff8c00, #ffd000);
+
+    box-shadow:
+        0 0 10px rgba(255, 120, 0, 0.9),
+        0 0 20px rgba(255, 120, 0, 0.5);
+
+    transition: width 0.4s ease;
+}
+
+/* ===== OPÇÕES ===== */
 #options {
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .option {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 14px;
+    border-radius: 15px;
+
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 120, 0, 0.5);
+
+    color: white;
     cursor: pointer;
+    transition: 0.25s;
 }
 
 .option:hover {
-    background-color: #e9ecef;
+    background: rgba(255, 120, 0, 0.2);
+    transform: scale(1.03);
 }
 
 .option.selected {
-    background-color: #007bff;
-    color: white;
+    background: linear-gradient(135deg, #ff5e00, #ffb000);
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(255, 120, 0, 1);
+}
+
+/* ===== RESULTADO ===== */
+#result {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+    animation: resultado 0.7s ease;
+}
+
+#result h2 {
+    font-size: 24px;
+    opacity: 0.9;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+/* ===== IMAGEM CENTRALIZADA ===== */
+#character-image {
+    display: block;
+
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+
+    margin: 0 auto;
+
+    background: rgba(0, 0, 0, 0.65);
+    padding: 8px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(255, 140, 0, 0.65);
+
+    box-shadow:
+        0 0 35px rgba(255, 120, 0, 0.55),
+        0 0 80px rgba(255, 120, 0, 0.25);
+
+    animation: zoomIn 0.6s ease;
+}
+
+/* Pontuação */
+#result p {
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffb347;
+    opacity: 0.9;
+}
+
+#character-score {
+    font-size: 24px;
+    color: #ffd18a;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.9);
+}
+
+/* ===== ANIMAÇÕES ===== */
+#welcome, #quiz, #result {
+    animation: subir 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes resultado {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
