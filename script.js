@@ -9,17 +9,17 @@ class Personagem {
 class Quiz {
     constructor() {
         this.personagens = [
-            new Personagem("Gol G1", "Classico resistente e economico, conhecido por ser confiavel e de facil manutencao. Simbolo da mobilidade brasileira, humilde mas sempre presente."),
-            new Personagem("Ford Ka 99", "Agil e descontraido, o Ka e um carro popular que oferece agilidade nas ruas. Moderno para sua epoca, divertido e pratico para o dia a dia."),
-            new Personagem("Opala 6 Canecos", "Luxuoso e imponente, o Opala representa potencia e estilo. Um classico verdadeiro, elegante e sempre admirado na rua.")
+            new Personagem("Gol G1", "é o gol né, não tem o que falar"),
+            new Personagem("Ford Ka 99", "parece uma barata mas anda com gotas de gasolina"),
+            new Personagem("Opala 6 Canecos", "definição de aura")
         ];
         this.perguntas = [
             {
-                titulo: "Qual e a sua principal caracteristica?",
+                titulo: "Qual caracteristica te representa melhor?",
                 opcoes: [
-                    { texto: "Confiavel e pratico", pontos: [3, 1, 2] },
-                    { texto: "Agil e descontraido", pontos: [1, 3, 2] },
-                    { texto: "Elegante e imponente", pontos: [2, 1, 3] }
+                    { texto: "preguiçoso", pontos: [3, 1, 2] },
+                    { texto: "dá conta de tudo", pontos: [1, 3, 2] },
+                    { texto: "bebe muito", pontos: [2, 1, 3] }
                 ]
             },
             {
@@ -71,9 +71,9 @@ class Quiz {
                 ]
             },
             {
-                titulo: "Qual e o seu publico?",
+                titulo: "o que você acha melhor",
                 opcoes: [
-                    { texto: "Pessoas simples e praticas", pontos: [3, 2, 1] },
+                    { texto: "gastar nada", pontos: [3, 2, 1] },
                     { texto: "Jovens descontraidos", pontos: [1, 3, 2] },
                     { texto: "Admiradores de classicos", pontos: [2, 1, 3] }
                 ]
@@ -89,9 +89,9 @@ class Quiz {
             {
                 titulo: "Qual e seu sonho?",
                 opcoes: [
-                    { texto: "Rodar por decadas", pontos: [3, 2, 1] },
-                    { texto: "Ser o carro preferido", pontos: [1, 3, 2] },
-                    { texto: "Virar um icone", pontos: [2, 1, 3] }
+                    { texto: "sobeviver", pontos: [3, 2, 1] },
+                    { texto: "ficar rico", pontos: [1, 3, 2] },
+                    { texto: "viver a vida ao maximo", pontos: [2, 1, 3] }
                 ]
             }
         ];
