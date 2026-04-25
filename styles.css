@@ -279,3 +279,8 @@ button:hover {
         transform: scale(1);
     }
 }
+
+#character-name,
+#character-description {
+    display: none;
+}

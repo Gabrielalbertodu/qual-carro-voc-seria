@@ -3,36 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qual Carro Voce Seria?</title>
+    <title>Qual Carro Você Seria?</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div id="app">
 
+        
         <div id="welcome">
             <h1>Bem-vindo ao Mundo dos Carros</h1>
             <p>
-                No universo dos carros classicos brasileiros, cada um tem uma personalidade unica.
-                Descubra qual carro voce seria respondendo a algumas perguntas simples.
-                Sera voce um Gol G1, um Ford Ka 99 ou um Opala 6 Canecos?
+                No universo dos carros clássicos brasileiros, cada um tem uma personalidade única.
+                Descubra qual carro você seria respondendo a algumas perguntas simples.
+                Será você um Gol G1, um Ford Ka 99 ou um Opala 6 Canecos?
             </p>
-            <button id="start-btn">Comecar o Quiz</button>
+            <button id="start-btn">Começar o Quiz</button>
         </div>
 
+        
         <div id="quiz" style="display: none;">
             <h2 id="question-title"></h2>
-                <div id="progress-container">
+
+            <div id="progress-container">
                 <div id="progress-bar"></div>
-                </div>
+            </div>
+
             <div id="options"></div>
-            <button id="next-btn" style="display: none;">Proxima Pergunta</button>
+
+            <button id="next-btn" style="display: none;">
+                Próxima Pergunta
+            </button>
         </div>
 
+        
         <div id="result" style="display: none;">
             <h2>Seu Carro é:</h2>
 
             <img id="character-image" src="" alt="Imagem do carro">
+
+            <h3 id="character-name"></h3>
+            <p id="character-description"></p>
 
             <p>Pontuação: <span id="character-score"></span></p>
 
@@ -42,5 +53,6 @@
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
