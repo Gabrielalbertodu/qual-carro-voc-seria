@@ -1,7 +1,8 @@
 class Personagem {
-    constructor(nome, imagem) {
+    constructor(nome, imagem, descricao) {
         this.nome = nome;
         this.imagem = imagem;
+        this.descricao = descricao;
         this.pontuacao = 0;
     }
 }
@@ -9,147 +10,155 @@ class Personagem {
 class Quiz {
     constructor() {
         this.personagens = [
-            new Personagem("Gol G1", "img/golg1.png"),
-            new Personagem("Ford Ka 99", "img/fordka.png"),
-            new Personagem("Opala 6 Canecos", "img/opala_6.png")
+            new Personagem("Gol G1", "img/golg1.png", "Simples e resistente."),
+            new Personagem("Ford Ka 99", "img/fordka.png", "Ágil e prático."),
+            new Personagem("Opala 6 Canecos", "img/opala_6.png", "Potente e marcante.")
         ];
 
         this.perguntas = [
             {
-                titulo: "Qual característica te representa melhor?",
+                titulo: "Como você quer ser visto?",
                 opcoes: [
-                    { texto: "não se importa com aparencia", pontos: [3, 1, 2] },
-                    { texto: "pau pra toda obra", pontos: [1, 3, 2] },
-                    { texto: "bebe só final semana, mas se pudesse era todo dia", pontos: [2, 1, 3] }
+                    { texto: "Sou simples, mas resolvo tudo", pontos: [3, 1, 2] },
+                    { texto: "Sou tranquilo e desenrolado", pontos: [1, 3, 2] },
+                    { texto: "Quero respeito onde eu chego", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "Como você prefere viajar?",
+                titulo: "Sua vibe é mais:",
                 opcoes: [
-                    { texto: "com 20 reais de gasolina", pontos: [3, 2, 1] },
-                    { texto: "preucupação nenhuma", pontos: [1, 3, 2] },
-                    { texto: "chegar antes do ricardão", pontos: [2, 1, 3] }
+                    { texto: "Raiz e humilde", pontos: [3, 1, 2] },
+                    { texto: "Leve e divertida", pontos: [1, 3, 2] },
+                    { texto: "Intensa e marcante", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "Qual é a seu cantor favorito?",
+                titulo: "Dinheiro pra você é:",
                 opcoes: [
-                    { texto: "jorge e matheus", pontos: [3, 1, 2] },
-                    { texto: "mc ig", pontos: [1, 3, 2] },
-                    { texto: "tim maia", pontos: [2, 1, 3] }
+                    { texto: "Economizar sempre", pontos: [3, 2, 1] },
+                    { texto: "Gastar com equilíbrio", pontos: [2, 3, 1] },
+                    { texto: "Gastar sem medo", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "O que você valoriza?",
+                titulo: "No rolê você é:",
                 opcoes: [
-                    { texto: "dinheiro mais que a propiria vida", pontos: [3, 2, 1] },
-                    { texto: "viver uma vida mansa", pontos: [1, 3, 2] },
-                    { texto: "ser olhado por varios homens", pontos: [2, 1, 3] }
+                    { texto: "Fico de boa", pontos: [3, 2, 1] },
+                    { texto: "Animo geral", pontos: [1, 3, 2] },
+                    { texto: "Sou o centro das atenções", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "Como você se comporta no trânsito?",
+                titulo: "Seu estilo de vida é:",
                 opcoes: [
-                    { texto: "certinho", pontos: [3, 1, 2] },
-                    { texto: "foda-se a sociedade, to passando", pontos: [1, 3, 2] },
-                    { texto: "com medo", pontos: [2, 1, 3] }
+                    { texto: "Sobreviver e manter tudo funcionando", pontos: [3, 1, 2] },
+                    { texto: "Viver com conforto e praticidade", pontos: [1, 3, 2] },
+                    { texto: "Viver grande, sem limites", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "Em um churrasco, você leva o que?",
+                titulo: "Se algo dá errado:",
                 opcoes: [
-                    { texto: "linguiça", pontos: [3, 2, 1] },
-                    { texto: "pão de alho", pontos: [1, 3, 2] },
-                    { texto: "picanha claro (coxão duro)", pontos: [2, 1, 3] }
+                    { texto: "Resolvo com o que tenho", pontos: [3, 1, 2] },
+                    { texto: "Dou um jeito rápido", pontos: [1, 3, 2] },
+                    { texto: "Resolvo na força", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "O que você faria em uma aventura?",
+                titulo: "Qual frase te define?",
                 opcoes: [
-                    { texto: "voltava pra casa na mesma hora", pontos: [3, 1, 2] },
-                    { texto: "chama ajuda", pontos: [1, 3, 2] },
-                    { texto: "aproveita e se diverte", pontos: [2, 1, 3] }
+                    { texto: "O simples funciona", pontos: [3, 1, 2] },
+                    { texto: "O importante é se virar", pontos: [1, 3, 2] },
+                    { texto: "Nasci pra ser destaque", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "seu final de semana é como? (100% real)",
+                titulo: "Seu final de semana é:",
                 opcoes: [
-                    { texto: "Gastar nada", pontos: [3, 2, 1] },
-                    { texto: "não tem nem dinheiro pra gastar", pontos: [1, 3, 2] },
-                    { texto: "tá devendo dinheiro", pontos: [2, 1, 3] }
+                    { texto: "Economizar e descansar", pontos: [3, 2, 1] },
+                    { texto: "Sair de boa com os amigos", pontos: [1, 3, 2] },
+                    { texto: "Festa e bagunça", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "chegou multa, como você reage?",
+                titulo: "Seu carro ideal é:",
                 opcoes: [
-                    { texto: "com certeza não é minha", pontos: [3, 1, 2] },
-                    { texto: "é minha", pontos: [1, 3, 2] },
-                    { texto: "adeus rim esquerdo", pontos: [2, 1, 3] }
+                    { texto: "Resistente e barato", pontos: [3, 2, 1] },
+                    { texto: "Econômico e ágil", pontos: [2, 3, 1] },
+                    { texto: "Potente e imponente", pontos: [1, 2, 3] }
                 ]
             },
             {
-                titulo: "Qual é seu sonho?",
+                titulo: "No trânsito você é:",
                 opcoes: [
-                    { texto: "Sobreviver", pontos: [3, 2, 1] },
-                    { texto: "Ficar rico", pontos: [1, 3, 2] },
-                    { texto: "ser admirado", pontos: [2, 1, 3] }
+                    { texto: "Na calma", pontos: [3, 2, 1] },
+                    { texto: "Ligeiro", pontos: [1, 3, 2] },
+                    { texto: "Dominando tudo", pontos: [1, 2, 3] }
                 ]
             }
         ];
 
         this.perguntaAtual = 0;
         this.opcaoSelecionada = null;
+
         this.inicializar();
     }
 
     iniciarQuiz() {
-        document.getElementById('welcome').style.display = 'none';
-        document.getElementById('result').style.display = 'none';
-        document.getElementById('quiz').style.display = 'block';
+        document.getElementById("welcome").style.display = "none";
+        document.getElementById("result").style.display = "none";
+        document.getElementById("quiz").style.display = "flex";
+
         this.mostrarPergunta();
     }
 
     mostrarPergunta() {
         const pergunta = this.perguntas[this.perguntaAtual];
 
-        document.getElementById('question-title').textContent = pergunta.titulo;
+        document.getElementById("question-title").textContent = pergunta.titulo;
 
-        const optionsDiv = document.getElementById('options');
-        optionsDiv.innerHTML = '';
+        const optionsDiv = document.getElementById("options");
+        optionsDiv.innerHTML = "";
 
         pergunta.opcoes.forEach((opcao, index) => {
-            const div = document.createElement('div');
-            div.className = 'option';
+            const div = document.createElement("div");
+
+            div.className = "option";
             div.textContent = opcao.texto;
-            div.addEventListener('click', () => this.selecionarOpcao(index));
+
+            div.addEventListener("click", () => {
+                this.selecionarOpcao(index);
+            });
+
             optionsDiv.appendChild(div);
         });
 
         this.opcaoSelecionada = null;
-        document.getElementById('next-btn').style.display = 'none';
+        document.getElementById("next-btn").style.display = "none";
 
         this.atualizarProgresso();
     }
 
     selecionarOpcao(index) {
-        const options = document.querySelectorAll('.option');
+        const options = document.querySelectorAll(".option");
 
-        options.forEach(opt => opt.classList.remove('selected'));
-        options[index].classList.add('selected');
+        options.forEach((option) => {
+            option.classList.remove("selected");
+        });
+
+        options[index].classList.add("selected");
 
         this.opcaoSelecionada = index;
-        document.getElementById('next-btn').style.display = 'block';
+        document.getElementById("next-btn").style.display = "block";
     }
 
     proximaPergunta() {
-        if (this.opcaoSelecionada === null) {
-            return;
-        }
+        if (this.opcaoSelecionada === null) return;
 
         const pontos = this.perguntas[this.perguntaAtual].opcoes[this.opcaoSelecionada].pontos;
 
-        this.personagens.forEach((personagem, i) => {
-            personagem.pontuacao += pontos[i];
+        this.personagens.forEach((personagem, index) => {
+            personagem.pontuacao += pontos[index];
         });
 
         this.perguntaAtual++;
@@ -160,40 +169,45 @@ class Quiz {
             this.mostrarResultado();
         }
     }
-// barrinha de progresso, animação feita com css, aqui só atualiza a porcentagem
+
     atualizarProgresso() {
         const total = this.perguntas.length;
         const atual = this.perguntaAtual + 1;
         const porcentagem = (atual / total) * 100;
-        document.getElementById('progress-bar').style.width = porcentagem + "%";
+
+        document.getElementById("progress-bar").style.width = porcentagem + "%";
     }
-// aqui é onde mostra o resultado, ele esconde o quiz e mostra a div de resultado, depois percorre os personagens para encontrar o que tem a maior pontuação e exibe a imagem e a pontuação do personagem vencedor
+
     mostrarResultado() {
-        document.getElementById('quiz').style.display = 'none';
-        document.getElementById('result').style.display = 'block';
+        document.getElementById("quiz").style.display = "none";
+        document.getElementById("result").style.display = "flex";
 
         let maxPontuacao = 0;
         let personagemVencedor = null;
 
-        this.personagens.forEach(personagem => {
+        this.personagens.forEach((personagem) => {
             if (personagem.pontuacao > maxPontuacao) {
                 maxPontuacao = personagem.pontuacao;
                 personagemVencedor = personagem;
             }
         });
 
-        document.getElementById('character-score').textContent = maxPontuacao;
-        document.getElementById('character-image').src = personagemVencedor.imagem;
+        document.getElementById("character-score").textContent = maxPontuacao;
+        document.getElementById("character-image").src = personagemVencedor.imagem;
+
+        // ✔ requisito (fica no código, pode ocultar no CSS)
+        document.getElementById("character-name").textContent = personagemVencedor.nome;
+        document.getElementById("character-description").textContent = personagemVencedor.descricao;
     }
 
     reiniciar() {
-    location.reload();
+        location.reload();
     }
 
     inicializar() {
-        document.getElementById('start-btn').addEventListener('click', () => this.iniciarQuiz());
-        document.getElementById('next-btn').addEventListener('click', () => this.proximaPergunta());
-        document.getElementById('restart-btn').addEventListener('click', () => this.reiniciar());
+        document.getElementById("start-btn").addEventListener("click", () => this.iniciarQuiz());
+        document.getElementById("next-btn").addEventListener("click", () => this.proximaPergunta());
+        document.getElementById("restart-btn").addEventListener("click", () => this.reiniciar());
     }
 }
 
